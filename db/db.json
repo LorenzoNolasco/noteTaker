@@ -1,12 +1,12 @@
 [
     {
-        "id": "29ae6bbe-fcd9-4570-8dd2-c7d2490b077a",
-        "title": "1st note",
-        "text": "This is my first note.\nCheck it out!"
+        "id": "7fc1daec-2128-490b-afd2-ab4acf5e3d81",
+        "title": "This is my example",
+        "text": "An example note- lorenzo"
     },
     {
-        "id": "aa635191-ceec-4a58-bee1-3ae7404dd9b3",
-        "title": "Finish making this code work",
-        "text": "Have to submit this challenge"
+        "id": "833eb737-b814-43d1-b648-7ac56453cb48",
+        "title": "2nd example",
+        "text": "Hello World!"
     }
 ]
