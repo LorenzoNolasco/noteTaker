@@ -1,3 +1,4 @@
+// /routes/apiRoutes.js
 const router = require("express").Router();
 const fs = require("fs");
 const path = require("path");
@@ -5,6 +6,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const dbPath = path.join(__dirname, "../db/db.json");
 
+// Helper function to read and write to db.json
 const readFromFile = (filePath) =>
   new Promise((resolve, reject) => {
     fs.readFile(filePath, "utf8", (err, data) => {
@@ -19,6 +21,7 @@ const readFromFile = (filePath) =>
 const writeToFile = (filePath, content) =>
   fs.writeFileSync(filePath, JSON.stringify(content, null, 4));
 
+// GET route for retrieving all notes
 router.get("/", async (req, res) => {
   try {
     const notes = await readFromFile(dbPath);
@@ -28,6 +31,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// POST route for adding a new note
 router.post("/", async (req, res) => {
   try {
     const { title, text } = req.body;
@@ -39,10 +43,11 @@ router.post("/", async (req, res) => {
 
     res.json(newNote);
   } catch (err) {
-    res.status(500).json({ error: "Error saving note" });
+    res.status(500).json({ error: "Failed to save note" });
   }
 });
 
+// DELETE route for deleting a note
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -52,7 +57,7 @@ router.delete("/:id", async (req, res) => {
 
     res.json({ message: "Note deleted" });
   } catch (err) {
-    res.status(500).json({ error: "Error deleting note" });
+    res.status(500).json({ error: "Failed to delete note" });
   }
 });
 

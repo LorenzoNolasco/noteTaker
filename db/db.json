@@ -1,6 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "id": "29ae6bbe-fcd9-4570-8dd2-c7d2490b077a",
+        "title": "1st note",
+        "text": "This is my first note.\nCheck it out!"
+    },
+    {
+        "id": "aa635191-ceec-4a58-bee1-3ae7404dd9b3",
+        "title": "Finish making this code work",
+        "text": "Have to submit this challenge"
     }
 ]
